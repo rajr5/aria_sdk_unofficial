@@ -33,16 +33,16 @@ To instaniate the Aria object, a dictionary with the following keys is passed in
 }
 
 ### Valid api types are as follows:
-1. 0 = Core API
-2. 1 = Object Query API
-3. 2 = Admintools API
+* 0 = Core API
+* 1 = Object Query API
+* 2 = Admintools API
 
 ### Valid environment types are as follows:
-1. 0 = Stage Future
-2. 1 = Stage Current
-3. 2 = Production
-4. 3 = Stage Future CPH
-5. 4 = Production CPH
+* 0 = Stage Future
+* 1 = Stage Current
+* 2 = Production
+* 3 = Stage Future CPH
+* 4 = Production CPH
 
 **Note:** One optional parameter can be assed in named api_name.  This will be ignored, but is allowed.
 
