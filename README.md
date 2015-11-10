@@ -1,7 +1,7 @@
 # AriaSdkUnofficial
 
 This is an unofficial Aria SDK gem meant to be a bit simpler while also implementing all of the end points instead of a limited number of them.
-
+This product is issued with no warranty and is in no way any representation of Aria Systems.  The official sdk can be found [here](https://github.com/AriaSystems/ruby_sdk)
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -30,19 +30,19 @@ To instaniate the Aria object, a dictionary with the following keys is passed in
 	env_type: 1
 }
 
-Valid api types are as follows:
-# 0 = Core API
-# 1 = Object Query API
-# 2 = Admintools API
+### Valid api types are as follows:
+1. 0 = Core API
+2. 1 = Object Query API
+3. 2 = Admintools API
 
-Valid environment types are as follows:
-# 0 = Stage Future
-# 1 = Stage Current
-# 2 = Production
-# 3 = Stage Future CPH
-# 4 = Production CPH
+### Valid environment types are as follows:
+1. 0 = Stage Future
+2. 1 = Stage Current
+3. 2 = Production
+4. 3 = Stage Future CPH
+5. 4 = Production CPH
 
-*Note: One optional parameter can be assed in named api_name.  This will be ignored, but is allowed.*
+**Note:** One optional parameter can be assed in named api_name.  This will be ignored, but is allowed.
 
 ```ruby
 aria = Aria.new({client_no: 123456, auth_key:'nfjhfruiebire', api_type: 0, env_type: 0})
@@ -53,7 +53,7 @@ After instantiating the object, the client_no, auth_key, and url are all accessi
 puts aria.url
 ```
 
-To make and API call,  use the call method with the following parameters:
+### To make and API call,  use the call method with the following parameters:
 
 {
 	api_name: set_session, 
@@ -64,14 +64,14 @@ To make and API call,  use the call method with the following parameters:
 options and remove_nil are both optional parameters.
 Options are the additional API parameters used.
 Removing nill will strip parameters with nil values from the options prior to sending to Aria.
-*Defaults:* remove_nil=false, options = {}
+**Defaults:** remove_nil=false, options = {}
 
 ```ruby
 aria = Aria.new({client_no: 123456, auth_key:'nfjhfruiebire', api_type: 0, env_type: 0})
 response = aria.call('authenticate_caller', {acct_no: 123456})
 puts response.['session_id']
 ```
-Admintools example
+### Admintools example
 ```ruby
 aria = Aria.new({client_no: 123456, auth_key:'nfjhfruiebire', api_type: 2, env_type: 0})
 if response['error_code'] == 0
@@ -85,4 +85,4 @@ else
 end
 ```
 
-The response element is an httparty response
+#### The response element is an [httparty](https://github.com/jnunemaker/httparty) response.
