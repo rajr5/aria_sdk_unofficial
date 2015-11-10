@@ -25,13 +25,14 @@ Or install it yourself as:
 To use this gem, instantiate the Aria object and use the call method to make an API call.
 
 To instaniate the Aria object, a dictionary with the following keys is passed in as the only argument:
+```ruby
 {
 	client_no: 123456, 
 	auth_key:'auth_key_here', 
 	api_type: 0, 
 	env_type: 1
 }
-
+```
 ### Valid api types are as follows:
 * 0 = Core API
 * 1 = Object Query API
