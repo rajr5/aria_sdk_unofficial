@@ -1,7 +1,9 @@
 # AriaSdkUnofficial
 
 This is an unofficial Aria SDK gem meant to be a bit simpler while also implementing all of the end points instead of a limited number of them.
-This product is issued with no warranty and is in no way any representation of Aria Systems.  The official sdk can be found [here](https://github.com/AriaSystems/ruby_sdk)
+This product is issued with no warranty and is in no way any representation of Aria Systems.
+
+The official sdk can be found [here](https://github.com/AriaSystems/ruby_sdk).
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -55,15 +57,20 @@ puts aria.url
 
 ### To make and API call,  use the call method with the following parameters:
 
+```ruby
 {
 	api_name: set_session, 
 	options: {acct_no: 123456}, 
 	remove_nil: true
 }
+```
 
 options and remove_nil are both optional parameters.
+
 Options are the additional API parameters used.
+
 Removing nill will strip parameters with nil values from the options prior to sending to Aria.
+
 **Defaults:** remove_nil=false, options = {}
 
 ```ruby
@@ -71,6 +78,7 @@ aria = Aria.new({client_no: 123456, auth_key:'nfjhfruiebire', api_type: 0, env_t
 response = aria.call('authenticate_caller', {acct_no: 123456})
 puts response.['session_id']
 ```
+
 ### Admintools example
 ```ruby
 aria = Aria.new({client_no: 123456, auth_key:'nfjhfruiebire', api_type: 2, env_type: 0})
